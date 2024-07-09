@@ -10,5 +10,7 @@
 * skimage
 
 # 使用方式
+```python
 python api_usage/feature_pipline.py   # 建立人脸库
 python api_usage/recognise_pipline.py   # 人脸对比
+```
