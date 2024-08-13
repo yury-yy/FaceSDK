@@ -7,20 +7,17 @@ import logging.config
 from torchvision import transforms
 
 
-# 添加路径一次即可
-sys.path.append('/data/ai/FaceSDK')
-
 from core.image_cropper.arcface_cropper.FaceRecImageCropper import FaceRecImageCropper
 from models.model_pipline import ModelLoader
 
 # 配置日志
 mpl_logger = logging.getLogger('matplotlib')
 mpl_logger.setLevel(logging.WARNING)
-logging.config.fileConfig("/data/ai/FaceSDK/config/logging.conf")
+logging.config.fileConfig("../config/logging.conf")
 logger = logging.getLogger('api')
 
 # 初始化模型加载器，加载模型
-model_path = '/data/ai/FaceSDK/models'
+model_path = '../models'
 model_loader = ModelLoader(model_path)
 
 # 获取需要的模型处理器
@@ -28,7 +25,7 @@ faceDetModelHandler = model_loader.get_face_det_model_handler()  # 人脸检测
 faceAlignModelHandler = model_loader.get_face_align_model_handler()  # 人脸对齐
 face_cropper = FaceRecImageCropper()  # 人脸裁剪
 
-emo_model = cv2.dnn.readNetFromONNX('/data/ai/FaceSDK/models/emotion-ferplus-8.onnx')  # 加载onnx人脸表情模型
+emo_model = cv2.dnn.readNetFromONNX('../models/emotion-ferplus-8.onnx')  # 加载onnx人脸表情模型
 logger.info(f"人脸表情识别模型加载成功....")
 
 # 定义情感字典
