@@ -24,4 +24,4 @@ python emotion/emotion_pipline.py -src emotion/test\
                 --result_folder emotion/result  # 人脸表情识别
 ```
 
-### 注：在emotion文件夹下test文件夹存放测试图片或视频，result文件夹存放输出结果。你可以自定义找测试数据。
+##### 注：在emotion文件夹下test文件夹存放测试图片或视频，result文件夹存放输出结果。你可以自定义找测试数据。
